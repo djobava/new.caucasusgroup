@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Dashboard: compact heading, driver count and filter toolbar. */
+.w-full.p-4.min-h-screen {
+  color: #172033;
+  background: #f3f4f6;
+}
+
+.dark .w-full.p-4.min-h-screen {
+  color: #e5e7eb;
+  background: #111827;
+}
+
+.w-full.p-4.min-h-screen > h1 {
+  margin: 0 0 0.5rem;
+  color: #172033;
+  font-size: 1.35rem;
+  line-height: 1.5rem;
+}
+
+.dark .w-full.p-4.min-h-screen > h1 {
+  color: #f3f4f6;
+}
+
+.w-full.p-4.min-h-screen > h1::before {
+  content: "Drivers";
+}
+
+.w-full.p-4.min-h-screen > .mb-3.text-md {
+  order: 1;
+  width: fit-content;
+  margin: 0 0 0.65rem;
+  padding: 0.2rem 0.1rem;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.dark .w-full.p-4.min-h-screen > .mb-3.text-md {
+  color: #cbd5e1;
+}
+
+.w-full.p-4.min-h-screen > .bg-blue-500 {
+  order: 2;
+  margin-bottom: 1rem;
+  border: 1px solid #dbe1ea;
+  border-radius: 0.8rem;
+  background: #fff;
+  color: #263248;
+  box-shadow: none;
+}
+
+.dark .w-full.p-4.min-h-screen > .bg-blue-500 {
+  border-color: #374151;
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.w-full.p-4.min-h-screen > .bg-blue-500 input {
+  min-height: 2.6rem;
+  border-color: #dbe1ea;
+  border-radius: 0.55rem;
+  background: #f3f4f6;
+  color: #172033;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+.dark .w-full.p-4.min-h-screen > .bg-blue-500 input {
+  border-color: #4b5563;
+  background: #111827;
+  color: #f3f4f6;
+}
+
+.w-full.p-4.min-h-screen > .bg-blue-500 input::placeholder {
+  color: #94a3b8;
+}
+
+.w-full.p-4.min-h-screen > .bg-blue-500 label {
+  color: #475569;
+}
+
+.dark .w-full.p-4.min-h-screen > .bg-blue-500 label {
+  color: #cbd5e1;
+}
+
+.w-full.p-4.min-h-screen > .bg-blue-500 button[aria-label="Clear all filters"] {
+  color: #2563eb;
+  background: transparent;
+  padding-inline: 0.75rem;
+}
+
+.w-full.p-4.min-h-screen > .bg-blue-500 button[aria-label="Clear all filters"]:hover {
+  background: #eff6ff;
+}
+
+.w-full.p-4.min-h-screen > .bg-blue-500 button.rounded-full {
+  border-color: #dbe1ea;
+  background: #fff;
+  color: #475569;
+  padding: 0.45rem 0.85rem;
+}
+
+.dark .w-full.p-4.min-h-screen > .bg-blue-500 button.rounded-full {
+  border-color: #4b5563;
+  background: #1f2937;
+  color: #cbd5e1;
+}
+
+.w-full.p-4.min-h-screen > .bg-blue-500 button.rounded-full.bg-blue-600 {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div {
+    grid-template-columns: minmax(160px, 1fr) minmax(100px, 1fr) minmax(150px, 1fr) minmax(260px, 1.5fr) auto;
+    align-items: center;
+    column-gap: 0.65rem;
+    row-gap: 0.65rem;
+  }
+
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(1) { grid-column: 1; grid-row: 1; }
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(2) { grid-column: 2; grid-row: 1; }
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(3) { grid-column: 3; grid-row: 1; }
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(4) { grid-column: 1 / -1; grid-row: 2; }
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(5) { grid-column: 4; grid-row: 1; }
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(6) { grid-column: 5; grid-row: 1; }
+
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(5) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(6) {
+    justify-content: flex-start;
+    margin: 0;
+  }
+}
+
+/* Tidy desktop driver table and mobile cards to match the lighter filter panel. */
+.w-full.p-4.min-h-screen table {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.w-full.p-4.min-h-screen table thead tr {
+  background: #e8edf5;
+  color: #334155;
+}
+
+.dark .w-full.p-4.min-h-screen table thead tr {
+  background: #273449;
+  color: #dbe4f0;
+}
+
+.w-full.p-4.min-h-screen table tbody tr {
+  background: #fff;
+}
+
+.dark .w-full.p-4.min-h-screen table tbody tr {
+  background: #1f2937;
+}
+
+.w-full.p-4.min-h-screen > .block.lg\\:hidden > div {
+  border: 1px solid #dbe1ea;
+  background: #fff;
+}
+
+.dark .w-full.p-4.min-h-screen > .block.lg\\:hidden > div {
+  border-color: #374151;
+  background: #1f2937;
+}
+
+@media (max-width: 767px) {
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(4),
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(5),
+  .w-full.p-4.min-h-screen > .bg-blue-500 > div > :nth-child(6) {
+    grid-column: 1 / -1;
+  }
+}
