@@ -33,8 +33,7 @@ random secret: `node -e "console.log(require('crypto').randomBytes(48).toString(
 ## 3. Front
 New → GitHub Repo → იგივე repo. Settings:
 - **Root Directory**: `/client`
-- Build Command: `npm run build`
-- Start Command: `npx serve -s dist -l $PORT` (`-s` = SPA fallback, რომ refresh-ზე 404 არ იყოს)
+- Build და Start ავტომატურია (`npm run build`, მერე `npm start` → `serve -s dist`; სკრიპტები უკვე `client/package.json`-შია). Railway-ში Build/Start Command-ები **არ** შეავსო.
 - ცვლადებში `NODE_VERSION=20`
 - Networking → **Generate Domain**
 
